@@ -110,7 +110,7 @@ class PurchaseRequest extends AbstractRequest
         $data['txndatetime'] = $this->getTimestamp();
         $data['hash_algorithm'] = 'SHA256';
         $data['hash'] = $this->getHash();
-        $data['storename'] = $this->setStoreId();
+        $data['storename'] = $this->getStoreId();
         $data['mode'] = 'payonly';
         $data['paymentMethod'] = 'M';
         $data['chargetotal'] = $this->getAmount();
