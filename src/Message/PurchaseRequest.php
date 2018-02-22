@@ -151,6 +151,6 @@ class PurchaseRequest extends AbstractRequest
      */
     public function createHash($string)
     {
-        return sha1(bin2hex($sign));
+        return sha1(bin2hex($string));
     }
 }
