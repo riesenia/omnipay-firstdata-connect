@@ -1,0 +1,27 @@
+{
+    "name": "rshop/omnipay-firstdata-connect",
+    "description": "FirstData Connect Omnipay package (redirect only)",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tomas Saghy",
+            "email": "segy@riesenia.com"
+        }
+    ],
+    "require": {
+        "omnipay/common": "~2.0"
+    },
+    "require-dev": {
+        "omnipay/tests": "~2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Omnipay\\FirstDataConnect\\": "src"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        }
+    }
+}
