@@ -15,7 +15,7 @@ class CompletePurchaseResponse extends AbstractResponse
      */
     public function isSuccessful()
     {
-        return isset($this->data['status']) && $this->data['status'] == 'APPROVED';
+        return isset($this->data['status']) && in_array($this->data['status'], ['APPROVED', 'SCHVÁLENÉ']);
     }
 
     /**
