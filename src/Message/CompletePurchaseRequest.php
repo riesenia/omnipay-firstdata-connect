@@ -19,7 +19,7 @@ class CompletePurchaseRequest extends PurchaseRequest
             throw new InvalidResponseException('Odpoveď z platobnej brány sa nepodarilo overiť. Prosím kontaktujte nás.');
         }
 
-        return $this->httpRequest->query->all();
+        return $this->httpRequest->request->all();
     }
 
     /**
@@ -41,7 +41,7 @@ class CompletePurchaseRequest extends PurchaseRequest
      */
     public function getHash()
     {
-        return $this->createHash($this->getSharedSecret() . $this->httpRequest->query->get('approval_code') . $this->httpRequest->query->get('chargetotal') . $this->getCurrencyNumeric() . $this->httpRequest->query->get('txndatetime') . $this->getStoreId());
+        return $this->createHash($this->getSharedSecret() . $this->httpRequest->request->get('approval_code') . $this->httpRequest->request->get('chargetotal') . $this->getCurrencyNumeric() . $this->httpRequest->request->get('txndatetime') . $this->getStoreId());
     }
 
     /**
@@ -51,6 +51,6 @@ class CompletePurchaseRequest extends PurchaseRequest
      */
     protected function getBankHash()
     {
-        return $this->httpRequest->query->get('response_hash');
+        return $this->httpRequest->request->get('response_hash');
     }
 }
