@@ -1,6 +1,6 @@
-# Omnipay: Besteron
+# Omnipay: FirstData Connect
 
-**Besteron driver for the Omnipay PHP payment processing library**
+**FirstData driver for simple redirect mode (official package doesn't provide this feature)**
 
 [![Latest Stable Version](https://poser.pugx.org/rshop/omnipay-firstdata-connect/version.png)](https://packagist.org/packages/rshop/omnipay-firstdata-connect)
 [![Total Downloads](https://poser.pugx.org/rshop/omnipay-firstdata-connect/d/total.png)](https://packagist.org/packages/rshop/omnipay-firstdata-connect)
