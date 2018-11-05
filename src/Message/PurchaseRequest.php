@@ -72,6 +72,27 @@ class PurchaseRequest extends AbstractRequest
     }
 
     /**
+     * Setter
+     *
+     * @param string
+     * @return $this
+     */
+    public function setCheckoutoption($value)
+    {
+        return $this->setParameter('checkoutoption', $value);
+    }
+
+    /**
+     * Getter
+     *
+     * @return string
+     */
+    public function getCheckoutoption()
+    {
+        return $this->getParameter('checkoutoption');
+    }
+
+    /**
      * Get hash for request
      *
      * @return string
@@ -118,6 +139,7 @@ class PurchaseRequest extends AbstractRequest
         $data['oid'] = $this->getTransactionId();
         $data['responseSuccessURL'] = $this->getReturnUrl();
         $data['responseFailURL'] = $this->getReturnUrl();
+        $data['checkoutoption'] = $this->getCheckoutoption();
 
         return $data;
     }
