@@ -93,6 +93,27 @@ class PurchaseRequest extends AbstractRequest
     }
 
     /**
+     * Setter
+     *
+     * @param string
+     * @return $this
+     */
+    public function setPaymentMethod($value)
+    {
+        return $this->setParameter('checkoutoption', $value);
+    }
+
+    /**
+     * Getter
+     *
+     * @return string
+     */
+    public function getPaymentMethod()
+    {
+        return $this->getParameter('paymentMethod');
+    }
+
+    /**
      * Get hash for request
      *
      * @return string
@@ -133,13 +154,17 @@ class PurchaseRequest extends AbstractRequest
         $data['hash'] = $this->getHash();
         $data['storename'] = $this->getStoreId();
         $data['mode'] = 'payonly';
-        $data['paymentMethod'] = 'M';
         $data['chargetotal'] = $this->getAmount();
         $data['currency'] = $this->getCurrencyNumeric();
         $data['oid'] = $this->getTransactionId();
         $data['responseSuccessURL'] = $this->getReturnUrl();
         $data['responseFailURL'] = $this->getReturnUrl();
         $data['checkoutoption'] = $this->getCheckoutoption();
+
+        $paymentMethod = $this->getPaymentMethod();
+        if (!is_null($paymentMethod)) {
+            $data['paymentMethod'] = $paymentMethod;
+        }
 
         return $data;
     }
