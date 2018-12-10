@@ -97,6 +97,27 @@ class Gateway extends AbstractGateway
     }
 
     /**
+     * Setter
+     *
+     * @param string
+     * @return $this
+     */
+    public function setPaymentMethod($value)
+    {
+        return $this->setParameter('checkoutoption', $value);
+    }
+
+    /**
+     * Getter
+     *
+     * @return string
+     */
+    public function getPaymentMethod()
+    {
+        return $this->getParameter('paymentMethod');
+    }
+
+    /**
      * Create a purchase request
      *
      * @param array $parameters
