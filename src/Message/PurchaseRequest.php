@@ -100,7 +100,7 @@ class PurchaseRequest extends AbstractRequest
      */
     public function setPaymentMethod($value)
     {
-        return $this->setParameter('checkoutoption', $value);
+        return $this->setParameter('paymentMethod', $value);
     }
 
     /**
@@ -162,7 +162,7 @@ class PurchaseRequest extends AbstractRequest
         $data['checkoutoption'] = $this->getCheckoutoption();
 
         $paymentMethod = $this->getPaymentMethod();
-        if (!is_null($paymentMethod)) {
+        if ($paymentMethod) {
             $data['paymentMethod'] = $paymentMethod;
         }
 

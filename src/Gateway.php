@@ -29,7 +29,8 @@ class Gateway extends AbstractGateway
             'storeId' => '',
             'sharedSecret' => '',
             'testMode' => false,
-            'checkoutoption' => 'classic'
+            'checkoutoption' => 'classic',
+            'paymentMethod' => null
         ];
     }
 
@@ -104,7 +105,7 @@ class Gateway extends AbstractGateway
      */
     public function setPaymentMethod($value)
     {
-        return $this->setParameter('checkoutoption', $value);
+        return $this->setParameter('paymentMethod', $value);
     }
 
     /**
